@@ -61,6 +61,7 @@ jobs:
     name: deploy application
 
     needs: 
+      -build
       - test
       - lint
 
@@ -70,7 +71,7 @@ jobs:
 
     steps:
       - name: show version
-        run: echo "deploying version ${{ needs.build.outputs.version}}"
+        run: echo "deploying version ${{ needs.build.outputs.version }}"
 
       - name: deploy application
         run: echo " deployment successful"
