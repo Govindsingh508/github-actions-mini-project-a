@@ -23,7 +23,7 @@ jobs:
       - name: Generate version
 
         id: version
-        run: echo"ver=v1.0.0" >> $GITHUB_OUTPUT
+        run: echo "ver=v1.0.0" >> $GITHUB_OUTPUT
 
       - name: Build Application
       
