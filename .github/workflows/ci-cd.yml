@@ -61,7 +61,7 @@ jobs:
     name: deploy application
 
     needs: 
-      -build
+      - build
       - test
       - lint
 
