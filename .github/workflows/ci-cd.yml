@@ -55,3 +55,22 @@ jobs:
 
       - name: run lint
         run: echo" lint check passed"
+
+  deploy:
+
+    name: deploy application
+
+    needs: 
+      - test
+      - lint
+
+    if: success()
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: show version
+        run: echo "deploying version ${{ needs.build.outputs.version}}"
+
+      - name: deploy application
+        run: echo" deployment successful"
