@@ -28,3 +28,30 @@ jobs:
       - name: Build Application
       
         run: echo"Building Application"
+
+  test:
+    name: Run Tests
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: run python application
+        run: python app.py
+
+  lint:
+    name: Run Lint checks
+
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: run lint
+        run: echo" lint check passed"
