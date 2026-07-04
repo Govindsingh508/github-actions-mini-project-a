@@ -31,6 +31,14 @@ jobs:
           echo "Building Application"
           echo "Version 1.0.0" > build.txt
 
+      - name: Display GitHub Context
+        run: |
+          echo "Actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Runner OS: ${{ runner.os }}"
+
       - name: upload Build Artifact
         uses: actions/upload-artifact@v4
 
