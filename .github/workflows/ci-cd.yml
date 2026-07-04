@@ -27,7 +27,16 @@ jobs:
 
       - name: Build Application
       
-        run: echo "Building Application"
+        run: |
+          echo "Building Application"
+          echo "Version 1.0.0" > build.txt
+
+      - name: upload Build Artifact
+        uses: actions/upload-artifact@v4
+
+        with:
+          name: build-file
+          path: build.txt
 
   test:
     name: Run Tests
