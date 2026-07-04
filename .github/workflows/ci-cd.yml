@@ -49,6 +49,15 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+
+        with:
+          name: build-file
+
+      - name: Display Artifact Content
+        run: cat build.txt
+
       - name: run python application
         run: python app.py
 
