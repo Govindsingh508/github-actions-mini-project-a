@@ -1,5 +1,7 @@
 name: Mini CI/CD Pipeline
 
+env:
+  APP_NAME: GitHub-Actions-Demo
 on:
   workflow_dispatch:
 
@@ -28,7 +30,7 @@ jobs:
       - name: Build Application
       
         run: |
-          echo "Building Application"
+          echo "Building $APP_NAME"
           echo "Version 1.0.0" > build.txt
 
       - name: Display GitHub Context
